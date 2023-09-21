@@ -1,0 +1,6 @@
+caption: test/test.caption.tsv
+composite: false
+feature: test/train.feature.tsv
+hw: test/test.hw.tsv
+img: test/test.tsv
+label: test/test.label.tsv
