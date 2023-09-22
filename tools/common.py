@@ -99,7 +99,7 @@ def synchronize():
             return
         dist.barrier()
     else:
-        from src.tools.common import get_mpi_size
+        from tools.common import get_mpi_size
         if get_mpi_size() > 1:
             try:
                 import horovod.torch as hvd
@@ -594,7 +594,7 @@ def exclusive_open_to_read(fname, mode='r'):
         disable_lock = int(disable_lock)
     if not disable_lock:
         user_name = get_user_name()
-        from src.tools.common import acquireLock, releaseLock
+        from tools.common import acquireLock, releaseLock
         # from src.tools.common import acquireLock, releaseLock
         lock_fd = acquireLock(op.join('/tmp',
             '{}_lock_{}'.format(user_name, hash_sha1(fname))))
