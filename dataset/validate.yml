@@ -1,6 +1,0 @@
-caption: validate/validate.caption.tsv
-composite: false
-feature: validate/train.feature.tsv
-hw: validate/validate.hw.tsv
-img: validate/validate.tsv
-label: validate/validate.label.tsv

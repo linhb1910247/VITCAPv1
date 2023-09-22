@@ -236,7 +236,7 @@ class TSVFile(object):
     def num_rows(self):
         if self._len is None:
             if op.isfile(self.lineidx_8b):
-                from src.tools.common import get_file_size
+                from tools.common import get_file_size
                 self._len = get_file_size(self.lineidx_8b) // 8
             else:
                 self._ensure_lineidx_loaded()
@@ -339,7 +339,7 @@ class TSVFile(object):
             tmp_lineidx = op.join('/tmp', self.lineidx)
             ensure_directory(op.dirname(tmp_tsvfile))
 
-            from src.tools.common import ensure_copy_file
+            from tools.common import ensure_copy_file
             ensure_copy_file(self.tsv_file, tmp_tsvfile)
             ensure_copy_file(self.lineidx, tmp_lineidx)
 
@@ -364,7 +364,7 @@ class TSVFile(object):
         if self.pid != os.getpid():
             self._fp.close()
             logging.info('re-open {} because the process id changed'.format(self.tsv_file))
-            from src.tools.common import print_opened_files
+            from tools.common import print_opened_files
             print_opened_files()
             self._fp = exclusive_open_to_read(self.tsv_file)
             self.pid = os.getpid()

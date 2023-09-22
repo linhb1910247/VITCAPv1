@@ -1,6 +1,0 @@
-caption: train/train.caption.tsv
-composite: false
-feature: train/train.feature.tsv
-hw: train/train.hw.tsv
-img: train/train.tsv
-label: train/train.label.tsv
