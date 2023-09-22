@@ -952,7 +952,7 @@ def iter_caption_to_json(iter_caption, json_file):
             })
             n += 1
     info['annotations'] = annotations
-    from src.tools.common import write_to_file
+    from tools.common import write_to_file
     write_to_file(json.dumps(info), json_file)
 
 
